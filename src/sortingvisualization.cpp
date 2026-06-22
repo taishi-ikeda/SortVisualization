@@ -84,12 +84,13 @@ void SortingVisualizer::startSorting() {
         sortConnection_ = connect(sortTimer_, &QTimer::timeout, this, &SortingVisualizer::shellSortStep);
     }
     sortTimer_->start(10);
-
+    /*
     isSorting_ = false;
     generateButton_->setEnabled(true);
     startButton_->setEnabled(true);
     countSpinBox_->setEnabled(true);
     algoComboBox_->setEnabled(true);
+    */
 }
 
 void SortingVisualizer::incrementStep() {
@@ -164,6 +165,11 @@ void SortingVisualizer::bubbleSortStep() {
         i = 0;
         j = 0;
         disconnect(sortConnection_);
+        isSorting_ = false;
+        generateButton_->setEnabled(true);
+        startButton_->setEnabled(true);
+        countSpinBox_->setEnabled(true);
+        algoComboBox_->setEnabled(true);
     }
     update();
 }
@@ -209,6 +215,11 @@ void SortingVisualizer::selectionSortStep() {
         j = 0;
         minIdx = 0;
         disconnect(sortConnection_);
+        isSorting_ = false;
+        generateButton_->setEnabled(true);
+        startButton_->setEnabled(true);
+        countSpinBox_->setEnabled(true);
+        algoComboBox_->setEnabled(true);
     }
     update();
 }
@@ -248,6 +259,11 @@ void SortingVisualizer::insertionSortStep() {
         i = 1;
         j = 0;
         disconnect(sortConnection_);
+        isSorting_ = false;
+        generateButton_->setEnabled(true);
+        startButton_->setEnabled(true);
+        countSpinBox_->setEnabled(true);
+        algoComboBox_->setEnabled(true);
     }
     update();
 }
@@ -294,6 +310,11 @@ void SortingVisualizer::shellSortStep() {
         i = gap;
         j = 0;
         disconnect(sortConnection_);
+        isSorting_ = false;
+        generateButton_->setEnabled(true);
+        startButton_->setEnabled(true);
+        countSpinBox_->setEnabled(true);
+        algoComboBox_->setEnabled(true);
     }
     update();
 }
